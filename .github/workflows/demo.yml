@@ -42,11 +42,10 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Get build artifact
-        uses: actions/download-artifact@v4
+      - name: Download the artifact
+        uses: actions/download-artifact@v3
         with:
           name: dist-files
-          run-id: ${{ github.event.workflow_run.id }}
       - name: Output contents
         run: ls
       - name: Output file name
