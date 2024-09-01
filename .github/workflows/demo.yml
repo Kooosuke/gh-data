@@ -46,7 +46,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dist-files
-          path: dist
+          run-id: ${{ github.event.workflow_run.id }}
       - name: Output contents
         run: ls
       - name: Output file name
